@@ -1,6 +1,6 @@
 from organizer import organize
 from renamer import rename
-from utils import check_path
+from utils import check_path,getLocale
 
 def main():
     
@@ -10,7 +10,7 @@ def main():
         print("Invalid path.")
         return
     rename(path)
-    organize(path)
+    organize(path,getLocale())
     print("Done.")
 
 if __name__ == "__main__":
