@@ -18,7 +18,8 @@ def organize(path,locale):
         yearpath = os.path.join(path, get_year(filepath))
         if yearpath not in years:
             years.append(yearpath)
-            os.mkdir(yearpath)
+            if not os.path.exists(yearpath):
+                os.mkdir(yearpath)
         os.rename(filepath,os.path.join(yearpath, f))
     for year in years:
         organize_month(year,locale)
